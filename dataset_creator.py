@@ -15,9 +15,10 @@ DataType = 'val2017' # trani2017 - once ready to run on full dataset
 annFile='{}/annotations/instances_{}.json'.format(dataDir, DataType)
 
 # Desired image size and categories
+# TODO - run this once network architecture finalized
 new_w, new_h = 200, 200
 catNms = ['car']
-area_suppression_factor = 35*35 # (pixels^2)
+area_suppression_factor = 25*25 # (pixels^2) : qualitatively, this seems like a good threshold for 200x200 images
 coco = COCO(annFile)
 
 # cats = coco.loadCats(coco.getCatIds())
